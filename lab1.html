@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    
+</head>
+
+<body class="page">
+
+<header class="header">
+
+    <div class="container container-header">
+
+
+        <a href="./index.html" class="logo">
+            ЗПІ<span class="logo decor" id="logo-web">зп-31</span>
+        </a>
+
+    <nav>
+        
+        <ul class="site-nav">
+            <li class="nav-item"><a href="./lab1.html"  class="link site-item">Лабораторна 1</a></li>
+            <li class="nav-item"><a href="./lab2.html" class="link site-item" >Лабораторна 2</a></li>
+            <li class="nav-item"><a href="./lab3.html" class="link site-item" >Лабораторна 3</a></li>
+            <li class="nav-item"><a href="./lab4.html" class="link site-item" >Лабораторна 4</a></li>
+        </ul>
+    </nav>
+
+        <ul class="contacts">
+            <li class="contact-item">
+                <a class="contact link" href=mailto:inna.svichkar@gmail.com><svg class="contact-icon" width="16" height="12"><use href="./images/icons.svg#icon-envelope"></use></svg>СВІЧКАР ІННА</a>
+            </li>
+        </ul>
+    
+    </div>
+
+</header>
+
+<main>
+
+
+    <section class="section hero-lab">
+
+        <div class="container hero-container">
+            <h1 class="hero-title">ЛАБОРАТОРНА РОБОТА № 1</h1>
+            <p class="hero-text">з дисципліни "Інтернет-технології та проектування web-застосувань"</p>
+            <!-- <button class="hero-button" type="button">Хочу івент</button> -->
+        </div>
+       
+    </section>
+
+    <section class="section">
+        <div class="container grey-container">
+        <div class="text-container">
+            <h2 class="title-lab">ТЕМА РОБОТИ:</h2>
+            <p class="text-lab">СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.
+                РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.</p>
+        </div>
+
+        <div class="text-container">
+            <h2 class="title-lab">МЕТА:</h2>
+            <p class="text-lab">ПРИДБАТИ ПРАКТИЧНІ НАВИЧКИ РОБОТИ З HTML-ДОКУМЕНТОМ,
+                ЗОБРАЖЕННЯМИ, ПОСИЛАННЯМИ, СПИСКАМИ ТА ФОРМАМИ</p>
+        </div>
+        <div>
+            <h2 class="title-lab">МІСЦЕ РОЗТАШУВАННЯ:</h2>
+            <a href="https://github.com/innsvi/Lab1_web_kpi"><p class="text-lab">РЕПОЗИТОРІЙ НА GITHUB</p></a>
+        </div>
+
+
+        <!-- -----------ВСТАВКА КОДА--------------- -->
+        <div>
+            <h2 class="title-lab code-title">HTML-КОД ОСНОВНОЇ СТОРІНКИ:</h2>
+            <xmp class="codetext">
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="">
+            HappyStudio
+        </a>
+    <nav>
+        <ul>
+            <li><a href="">Головна</a></li>
+            <li><a href="about.html">Портфоліо</a></li>
+            <li><a href="">Котракти</a></li>
+        </ul>
+    </nav>
+
+        <ul>
+            <li><a href=mailto:info@devstudio.com>info@happystudio.com</a></li>
+            <li><a href=tel:+380961111111>+38 096 111 11 11</a></li>
+        </ul>
+    </header>
+<main>
+    <div>
+        <section>
+            <h1><a href="about.html">Організуємо свято <br /></a> в будь-який день</h1>
+            <button type="button">Замовити послугу</button>
+        </section>
+    </div>
+
+    <section>
+        <h2>Наші переваги</h2>
+        <ol>
+            <li>
+                <h3>УВАГА ДО ДЕТАЛЕЙ</h3>
+                <p>Ідейні міркування, і для будь-якої події в нас є план.</p>
+            </li>
+
+            <li>
+                <h3>ПУНКТУАЛЬНІСТЬ</h3>
+                <p>Ми ніколи не запізнюємось і ви будете впевнені у результаті.</p>
+            </li>
+
+            <li>
+                <h3>ПЛАНУВАННЯ</h3>
+                <p>Проводимо консультації та складаємо бюджет свята ще до передплати.</p>
+            </li>
+
+            <li>
+                <h3>КВАЛІФІКОВАНІ КАДРИ</h3>
+                <p>В нашому агенстві працюють найкращі спеціалісти.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Чим ми займаємося</h2>
+        <ul>
+            <li>
+                <img src="./images/im1.jpg" width="370" alt="організація свят" /> 
+            </li>
+
+            <li>
+                <img src="./images/im2.jpg" width="370" alt="корпоративи" />
+            </li>
+
+            <li>
+                <img src="./images/im3.jpg" width="370" alt="дні народження" />
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <table style="border: 1px solid black;">
+            <tr>
+              <th style="border: 1px solid black;">Всього заходів проведено</th>
+              <th style="border: 1px solid black;">Задоволених клієнтів</th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid black;">3000</td>
+              <td style="border: 1px solid black;">15 0000</td>
+            </tr>
+          </table>
+    </section>
+
+    <section>
+        <h2>Наша команда</h2>
+        <ul>
+            <li>
+                <img src="./images/igor.jpg" width="270" alt="Ігор Дем'яненко" />
+                <h3 class="subtitle">Ігор Дем'яненко</h3>
+                <p lang="en" class="profession">Директор</p>
+            </li>
+
+            <li>
+                <img src="./images/olga.jpg" width="270" alt="Ольга Рєпіна" />
+                <h3 class="subtitle">Ольга Забудько</h3>
+                <p lang="en" class="profession">Головний менеджер</p>
+            </li>
+
+            <li>
+                <img src="./images/mykola.jpg" width="270" alt="Микола Тарасов" />
+                <h3 class="subtitle">Микола Тарасов</h3>
+                <p lang="en" class="profession">Івент-стратег</p>
+            </li>
+
+            <li>
+                <img src="./images/mykhailo.jpg" width="270" alt="Михайло Єрмаков" />
+                <h3 class="subtitle">Михайло Єрмаков</h3>
+                <p lang="en" class="profession">Дизайнер</p>
+            </li>
+
+        </ul>
+    </section>
+
+</main>
+
+
+<footer> 
+        
+    <a href=""> HappyStudio </a>
+
+    <address>
+  
+    <a href=mailto:info@devstudio.com>info@happystudio.com</a> <br />
+    <a href=tel:+380961111111>+38 096 111 11 11</a>
+
+    </address>
+
+    <div>
+        <strong>Підпишіться на розсилку</strong>
+        <form  name="sign" autocomplete="off" method="post">
+            <label>
+                <input type="email" name="email" placeholder="E-mail" required>
+            </label>
+            <button type="submit">Підписатися
+                <svg class="footer-form__icon" width="24" height="24">
+                    <use href="./images/icons.svg#plane-icon"></use>
+                </svg>
+            </button>
+        </form>
+    
+</footer>
+       
+
+</body>
+</html>
+            </xmp>
+        </div>
+        <!-- -----------ВСТАВКА КОДА--------------- -->
+
+        <div class="text-container">
+            <h2 class="title-lab">ВИСНОВКИ:</h2>
+            <p class="text-lab">У процесі виконання лабораторної роботи з HTML 
+                ми мали можливість поглибити знання про основи структурування веб-сторінок. 
+                Практичне застосування тегів та атрибутів HTML дозволило нам зрозуміти, 
+                як ефективно створювати семантично коректний і доступний вміст. 
+                Ми також ознайомились із важливістю валідації коду та засвоїли, 
+                як за допомогою інструментів для розробників перевіряти стандарти W3C,
+                 що забезпечує кращу сумісність та відображення веб-сторінок у різних браузерах 
+                 і на різних пристроях.</p>
+        </div>
+    </div>
+    </section>
+
+
+
+
+</main>
+
+
+<footer class="footer"> 
+    <div class="container">
+
+        <div class="adrfoot">
+        <div class="foot">
+        
+        <div class="logo-end">
+    <a class="logo logo-foot" href="./index.html"> 
+        Інна<span class="logo-footer">Свічкар</span>
+    </a>
+        </div>
+
+ 
+    <address>
+    <ul class="contacts-end">
+    <li class="address-footer"><a class="post-end link" href=mailto: inna.svichkar@gmail.com>inna.svichkar@gmail.com</a></li>
+    <li class="address-footer"><a class="phone-end link" href=tel:+380507889367>+38 050 788 93 67</a></li>
+  </ul>
+    </address>
+</div>
+   
+        </div>
+</div>
+    
+</footer>
+
+       
+
+</body>
+</html>

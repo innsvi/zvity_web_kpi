@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    
+</head>
+
+<body class="page">
+
+<header class="header">
+
+    <div class="container container-header">
+
+
+        <a href="./index.html" class="logo">
+            ЗПІ<span class="logo decor" id="logo-web">зп-31</span>
+        </a>
+
+    <nav>
+        
+        <ul class="site-nav">
+
+            <li class="nav-item"><a href="./lab1.html"  class="link site-item">Лаб 1</a></li>
+            <li class="nav-item"><a href="./lab2.html" class="link site-item" >Лаб 2</a></li>
+            <li class="nav-item"><a href="./lab3.html" class="link site-item" >Лаб 3</a></li>
+            <li class="nav-item"><a href="./lab4.html" class="link site-item" >Лаб 4</a></li>
+            <li class="nav-item"><a href="./lab5.html" class="link site-item" >Лаб 5</a></li>
+            <li class="nav-item"><a href="./lab6.html" class="link site-item" >Лаб 6</a></li>
+            <li class="nav-item"><a href="./lab7.html" class="link site-item" >Лаб 7</a></li>
+        </ul>
+    </nav>
+
+        <ul class="contacts">
+            <li class="contact-item">
+                <a class="contact link" href=mailto:inna.svichkar@gmail.com><svg class="contact-icon" width="16" height="12"><use href="./images/icons.svg#icon-envelope"></use></svg>СВІЧКАР ІННА</a>
+            </li>
+        </ul>
+    
+    </div>
+
+</header>
+
+<main>
+
+    <section class="section hero-lab">
+
+        <div class="container hero-container">
+            <h1 class="hero-title">ЛАБОРАТОРНА РОБОТА № 5</h1>
+            <p class="hero-text">з дисципліни "Основи клієнтських розробок"</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container grey-container">
+            <div class="text-container">
+                <h2 class="title-lab">ТЕМА РОБОТИ:</h2>
+                <p class="text-lab">ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ.
+                    ВИКОРИСТАННЯ МАСИВІВ У JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ
+                    ЗАСОВАМИ МОВИ JAVASCRIPT
+                </p>
+            </div>
+    
+            <div class="text-container">
+                <h2 class="title-lab">МЕТА:</h2>
+                <p class="text-lab">придбати практичні навички роботи з масивами у js-сценаріях.
+                    Реалізація програм засовами мови JAVASCRIPT
+                </p>
+            </div>
+    
+            <div class="text-container">
+                <h2 class="title-lab">МІСЦЕ РОЗТАШУВАННЯ:</h2>
+                <a href="https://github.com/innsvi/lab5.1_web_kpi"><p class="text-lab">РЕПОЗИТОРІЙ НА GITHUB</p></a>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">РЕАЛІЗАЦІЯ СОРТУВАННЯ МАСИВУ ЧИСЕЛ МЕТОДОМ ВСТАВКИ:</h2>
+                <img src="./images/array2.png" width="600px">
+                <xmp class="codetext">
+            // Функція для обробки вхідного масиву і виконання необхідних операцій       
+            function processArray() {
+                        
+            // Отримуємо введені користувачем дані           
+            const input = document.getElementById('arrayInput').value;
+                    
+            // Перетворюємо вхідний рядок в масив чисел
+            const arrayA = input.split(',').map(Number);
+                    
+            // Знаходимо максимальний елемент в масиві
+            const maxElement = Math.max(...arrayA);
+                    
+             // Створюємо змінений масив B
+            const arrayB = arrayA.map(element => element * maxElement);
+                    
+            // Відображаємо оригінальний масив
+            document.getElementById('originalArray').innerText = arrayA.join(', ');
+                    
+            // Відображаємо змінений масив
+            document.getElementById('modifiedArray').innerText = arrayB.join(', ');
+                    
+            // Сортуємо змінений масив за зменшенням за допомогою сортування вставками
+            insertionSortDescending(arrayB);
+                    
+            // Відображаємо відсортований масив
+             document.getElementById('sortedArray').innerText = arrayB.join(', ');
+            }
+                    
+                // Функція для сортування масиву за зменшенням за допомогою сортування вставками
+                function insertionSortDescending(array) {
+                for (let i = 1; i < array.length; i++) {
+                let key = array[i];
+                let j = i - 1;
+                    
+                // Переміщуємо елементи array[0..i-1], які менші за key,
+                // на одну позицію вперед від їх поточної позиції
+                while (j >= 0 && array[j] < key) {
+                array[j + 1] = array[j];
+                    j = j - 1;
+                }
+                    array[j + 1] = key;
+                        }
+                    }
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">РЕАЛІЗАЦІЯ КАЛЬКУЛЯТОРА:</h2>
+                <img src="./images/calculator.png" width="600px">
+                <xmp class="codetext">
+        // Змінні для збереження операндів і операції
+        let currentInput = '';
+        let operator = '';
+        let operand1 = 0;
+        let operand2 = 0;
+                    
+        // Функція для додавання цифр до дисплея
+        function appendNumber(number) {
+        currentInput += number;
+        updateDisplay(currentInput);
+            }
+                    
+        // Функція для встановлення операції
+        function setOperation(op) {
+        if (currentInput !== '') {
+        operand1 = parseFloat(currentInput);
+        operator = op;
+        currentInput = '';
+            }
+                }
+                    
+        // Функція для обчислення результату
+        function calculate() {
+        if (currentInput !== '') {
+        operand2 = parseFloat(currentInput);
+        let result = 0;
+                    
+        switch (operator) {
+        case '+':
+        result = operand1 + operand2;
+        break;
+        case '-':
+        result = operand1 - operand2;
+        break;
+        case '*':
+        result = operand1 * operand2;
+        break;
+        case '/':
+        result = operand1 / operand2;
+        break;
+        case '%':
+        result = operand1 % operand2;
+        break;
+        case '^':
+        result = Math.pow(operand1, operand2);
+        break;
+            }
+                    
+        updateDisplay(result);
+        currentInput = result.toString();
+        operator = '';
+        operand1 = 0;
+        operand2 = 0;
+        }
+            }
+                    
+        // Функція для обчислення квадратного кореня
+        function sqrt() {
+        if (currentInput !== '') {
+        let result = Math.sqrt(parseFloat(currentInput));
+        updateDisplay(result);
+        currentInput = result.toString();
+        }
+        }
+                    
+        // Функція для очищення дисплея
+        function clearDisplay() {
+        currentInput = '';
+        operator = '';
+        operand1 = 0;
+        operand2 = 0;
+        updateDisplay(0);
+            }
+                    
+        // Функція для оновлення дисплея
+        function updateDisplay(value) {
+        document.getElementById('display').value = value;
+        }
+                    </xmp>
+
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">ВИСНОВКИ:</h2>
+                <p class="text-lab">     JavaScript є незамінною частиною сучасної 
+                    веб-розробки, оскільки він надає можливість створювати інтерактивні
+                     та динамічні веб-сайти. Як основний мова програмування для клієнтської 
+                     сторони, JavaScript дозволяє розробникам маніпулювати елементами DOM,
+                      реагувати на події користувача, а також асинхронно обмінюватися даними 
+                      з сервером, що призводить до покращення користувацького досвіду та 
+                      реакції інтерфейсу. Завдяки своїй гнучкості та широкому застосуванню,
+                       від простих скриптів до складних односторінкових додатків, JavaScript 
+                       відіграє ключову роль у створенні інтерактивних та відгукових 
+                       веб-сайтів, що є критично важливим для сучасного веб-дизайну та 
+                       розробки.
+                </p>
+            </div>
+    
+    </section>
+
+
+</main>
+
+
+<footer class="footer"> 
+    <div class="container">
+
+        <div class="adrfoot">
+        <div class="foot">
+        
+        <div class="logo-end">
+    <a class="logo logo-foot" href="./index.html"> 
+        Інна<span class="logo-footer">Свічкар</span>
+    </a>
+        </div>
+
+ 
+    <address>
+        <ul class="contacts-end">
+    <!-- <li class="address-footer"><a class="address-end link" href="https://www.google.com/maps/place/%D0%B1%D1%83%D0%BB.+%D0%9B%D0%B5%D1%81%D0%B8+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%BA%D0%B8,+26,+%D0%9A%D0%B8%D0%B5%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+02000/@50.4265841,30.5361971,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf0e033ecbe9:0x57a4dffefec77da0!8m2!3d50.4265807!4d30.5383859" target="_blank"  rel="noopener noreferrer" >м. Київ, пр-т Лесі Українки, 26</a></li> -->
+    <li class="address-footer"><a class="post-end link" href=mailto: inna.svichkar@gmail.com>inna.svichkar@gmail.com</a></li>
+    <li class="address-footer"><a class="phone-end link" href=tel:+380507889367>+38 050 788 93 67</a></li>
+  </ul>
+    </address>
+</div>
+   
+        </div>
+</div>
+    
+</footer>
+
+       
+
+</body>
+</html>

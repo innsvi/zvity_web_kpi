@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    
+</head>
+
+<body class="page">
+
+<header class="header">
+
+    <div class="container container-header">
+
+
+        <a href="./index.html" class="logo">
+            ЗПІ<span class="logo decor" id="logo-web">зп-31</span>
+        </a>
+
+    <nav>
+        
+        <ul class="site-nav">
+            <li class="nav-item"><a href="./lab1.html"  class="link site-item">Лаб 1</a></li>
+            <li class="nav-item"><a href="./lab2.html" class="link site-item" >Лаб 2</a></li>
+            <li class="nav-item"><a href="./lab3.html" class="link site-item" >Лаб 3</a></li>
+            <li class="nav-item"><a href="./lab4.html" class="link site-item" >Лаб 4</a></li>
+            <li class="nav-item"><a href="./lab5.html" class="link site-item" >Лаб 5</a></li>
+            <li class="nav-item"><a href="./lab6.html" class="link site-item" >Лаб 6</a></li>
+            <li class="nav-item"><a href="./lab7.html" class="link site-item" >Лаб 7</a></li>
+        </ul>
+    </nav>
+
+        <ul class="contacts">
+            <li class="contact-item">
+                <a class="contact link" href=mailto:inna.svichkar@gmail.com><svg class="contact-icon" width="16" height="12"><use href="./images/icons.svg#icon-envelope"></use></svg>СВІЧКАР ІННА</a>
+            </li>
+        </ul>
+    
+    </div>
+
+</header>
+
+<main>
+
+    <section class="section hero-lab">
+
+        <div class="container hero-container">
+            <h1 class="hero-title">ЛАБОРАТОРНА РОБОТА № 7</h1>
+            <p class="hero-text">з дисципліни "Основи клієнтських розробок"</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container grey-container">
+            <div class="text-container">
+                <h2 class="title-lab">ТЕМА РОБОТИ:</h2>
+                <p class="text-lab">КЛАСИ. ОБ`ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ`ЄКТ ПОДІЇ.
+                    ДЕЛЕГУВАННЯ ПОДІЙ. THROTTLE. МОДУЛЬНОСТЬ КОДУ
+
+                </p>
+            </div>
+    
+            <div class="text-container">
+                <h2 class="title-lab">МЕТА:</h2>
+                <p class="text-lab">придбати практичні навички роботи з об`єктами. Методи об`єкта.
+                    Callback. Стрілочні функції. Стрілочні функції як колбеки​.
+                    . Реалізація програм засовами мови JAVASCRIPT
+                    
+                </p>
+            </div>
+    
+            <div class="text-container">
+                <h2 class="title-lab">МІСЦЕ РОЗТАШУВАННЯ:</h2>
+                <a href="https://github.com/innsvi/lab7_web_kpi"><p class="text-lab">РЕПОЗИТОРІЙ НА GITHUB</p></a>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 1</h2>
+                <p class="text-lab">У звітному HTML-документі створити html-розміту,
+                    яка складається з наступних елементів : текст, кнопка,
+                    поле введення. Натискання на кнопку SHOW має виводити значення в консоль.
+                </p>
+                <img src="./images/7.1.png" width="400px">
+                <xmp class="codetext">
+                    // Додавання події натискання до кнопки
+                    document.getElementById('showBtn').addEventListener('click', function() {
+                        // Отримання значення з поля введення
+                        const inputValue = document.getElementById('inputField').value;
+                        // Виведення значення в консоль
+                        console.log(inputValue);
+                    });
+                </xmp>
+            </div>
+
+
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 3</h2>
+                <p class="text-lab">Кнопка "Приховати" ховає текст , виводячи зірочки
+                    замість введеної інформації, замінює назву кнопки на
+                    "Розкрити", при повторному натисканні текст знову
+                    стає доступним і кнопка набуває початкового вигляду.
+                </p>
+
+                <img src="./images/7.2.png" width="400px">
+
+                <xmp class="codetext">
+                    // Додавання події натискання до кнопки "Приховати/Показати"
+                    document.getElementById('toggleBtn').addEventListener('click', function() {
+                        const passwordField = document.getElementById('passwordField');
+                        const toggleBtn = document.getElementById('toggleBtn');
+                    
+                        if (passwordField.type === 'text') {
+                            // Зміна типу інпуту на password для приховування пароля
+                            passwordField.type = 'password';
+                            // Зміна тексту кнопки на "Показати"
+                            toggleBtn.textContent = 'Показати';
+                        } else {
+                            // Зміна типу інпуту на text для відображення пароля
+                            passwordField.type = 'text';
+                            // Зміна тексту кнопки на "Сховати"
+                            toggleBtn.textContent = 'Сховати';
+                        }
+                    });
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 5</h2>
+                <p class="text-lab">Якщо користувач клікнув на
+                    прямокутнику – у консолі виведе true. В іншому випадку – false.
+                </p>
+                <img src="./images/7.3.png" width="400px">
+                <xmp class="codetext">
+                    // Додавання події натискання до вікна
+                    window.addEventListener('click', function(event) {
+                        // Отримання елемента div з id "place"
+                        const placeDiv = document.getElementById('place');
+                        // Визначення чи клікнув користувач всередині div
+                        const clickedInside = placeDiv.contains(event.target);
+                        // Виведення результату у консоль
+                        console.log(clickedInside);
+                    });
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 7</h2>
+                <p class="text-lab">Напиши скрипт, який:
+                    1. Порахує і виведе в консоль кількість категорій
+                    в ul#categories, тобто елементів li.item.
+                    2. Для кожного элемента li.item у
+                    списку ul#categories, знайде і виведе в консоль
+                    текст заголовку елемента (тегу) і кількість
+                    елементів в категорії, вкладених в
+                    нього.
+                    
+                </p>
+
+                <img src="./images/7.4.png" width="400px">
+
+                <xmp class="codetext">
+                            // Отримання елемента ul#categories
+        const categoriesList = document.getElementById('categories');
+
+        // Отримання всіх елементів li.item
+        const categoryItems = categoriesList.querySelectorAll('.item');
+
+        // Виведення кількості категорій
+        console.log(`Number of categories: ${categoryItems.length}`);
+
+        // Перебір кожного елемента li.item
+        categoryItems.forEach(item => {
+            // Отримання тексту заголовку h2
+            const categoryTitle = item.querySelector('h2').textContent;
+            // Отримання кількості вкладених елементів li
+            const itemCount = item.querySelectorAll('ul li').length;
+            // Виведення заголовку і кількості елементів у категорії
+            console.log(`Category: ${categoryTitle}, Number of items: ${itemCount}`);
+        });
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 9</h2>
+                <p class="text-lab">Напиши скрипт, який змінює колір фону
+                    елемента Body через інлайн-стиль по кліку
+                    
+                </p>
+
+                <img src="./images/7.5.png" width="400px">
+
+                <xmp class="codetext">
+                    // Функція для генерації випадкового кольору у форматі hex
+                    function getRandomHexColor() {
+                        return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+                    }
+                    
+                    // Додавання події натискання до кнопки "Change color"
+                    document.querySelector('.change-color').addEventListener('click', function() {
+                        // Генерація випадкового кольору
+                        const randomColor = getRandomHexColor();
+                        // Зміна кольору фону body
+                        document.body.style.backgroundColor = randomColor;
+                        // Зміна текстового вмісту span.color
+                        document.querySelector('.color').textContent = randomColor;
+                    });
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">ВИСНОВКИ:</h2>
+                <p class="text-lab">JavaScript є незамінною частиною сучасної 
+                    веб-розробки, оскільки він надає можливість створювати інтерактивні
+                     та динамічні веб-сайти. Як основний мова програмування для клієнтської 
+                     сторони, JavaScript дозволяє розробникам маніпулювати елементами DOM,
+                      реагувати на події користувача, а також асинхронно обмінюватися даними 
+                      з сервером, що призводить до покращення користувацького досвіду та 
+                      реакції інтерфейсу. Завдяки своїй гнучкості та широкому застосуванню,
+                       від простих скриптів до складних односторінкових додатків, JavaScript 
+                       відіграє ключову роль у створенні інтерактивних та відгукових 
+                       веб-сайтів, що є критично важливим для сучасного веб-дизайну та 
+                       розробки.
+                </p>
+            </div>
+    
+    </section>
+
+
+</main>
+
+
+<footer class="footer"> 
+    <div class="container">
+
+        <div class="adrfoot">
+        <div class="foot">
+        
+        <div class="logo-end">
+    <a class="logo logo-foot" href="./index.html"> 
+        Інна<span class="logo-footer">Свічкар</span>
+    </a>
+        </div>
+
+ 
+    <address>
+        <ul class="contacts-end">
+    <!-- <li class="address-footer"><a class="address-end link" href="https://www.google.com/maps/place/%D0%B1%D1%83%D0%BB.+%D0%9B%D0%B5%D1%81%D0%B8+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%BA%D0%B8,+26,+%D0%9A%D0%B8%D0%B5%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+02000/@50.4265841,30.5361971,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf0e033ecbe9:0x57a4dffefec77da0!8m2!3d50.4265807!4d30.5383859" target="_blank"  rel="noopener noreferrer" >м. Київ, пр-т Лесі Українки, 26</a></li> -->
+    <li class="address-footer"><a class="post-end link" href=mailto: inna.svichkar@gmail.com>inna.svichkar@gmail.com</a></li>
+    <li class="address-footer"><a class="phone-end link" href=tel:+380507889367>+38 050 788 93 67</a></li>
+  </ul>
+    </address>
+</div>
+   
+        </div>
+</div>
+    
+</footer>
+
+       
+
+</body>
+</html>

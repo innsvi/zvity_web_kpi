@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="./css/styles.css"/>
+    
+</head>
+
+<body class="page">
+
+<header class="header">
+
+    <div class="container container-header">
+
+
+        <a href="./index.html" class="logo">
+            ЗПІ<span class="logo decor" id="logo-web">зп-31</span>
+        </a>
+
+    <nav>
+        
+        <ul class="site-nav">
+            <li class="nav-item"><a href="./lab1.html"  class="link site-item">Лаб 1</a></li>
+            <li class="nav-item"><a href="./lab2.html" class="link site-item" >Лаб 2</a></li>
+            <li class="nav-item"><a href="./lab3.html" class="link site-item" >Лаб 3</a></li>
+            <li class="nav-item"><a href="./lab4.html" class="link site-item" >Лаб 4</a></li>
+            <li class="nav-item"><a href="./lab5.html" class="link site-item" >Лаб 5</a></li>
+            <li class="nav-item"><a href="./lab6.html" class="link site-item" >Лаб 6</a></li>
+            <li class="nav-item"><a href="./lab7.html" class="link site-item" >Лаб 7</a></li>
+        </ul>
+    </nav>
+
+        <ul class="contacts">
+            <li class="contact-item">
+                <a class="contact link" href=mailto:inna.svichkar@gmail.com><svg class="contact-icon" width="16" height="12"><use href="./images/icons.svg#icon-envelope"></use></svg>СВІЧКАР ІННА</a>
+            </li>
+        </ul>
+    
+    </div>
+
+</header>
+
+<main>
+
+    <section class="section hero-lab">
+
+        <div class="container hero-container">
+            <h1 class="hero-title">ЛАБОРАТОРНА РОБОТА № 6</h1>
+            <p class="hero-text">з дисципліни "Основи клієнтських розробок"</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container grey-container">
+            <div class="text-container">
+                <h2 class="title-lab">ТЕМА РОБОТИ:</h2>
+                <p class="text-lab">ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ​.
+
+                </p>
+            </div>
+    
+            <div class="text-container">
+                <h2 class="title-lab">МЕТА:</h2>
+                <p class="text-lab">придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки​.
+                    .  Реалізація програм засовами мови JAVASCRIPT
+                    
+                </p>
+            </div>
+    
+            <div class="text-container">
+                <h2 class="title-lab">МІСЦЕ РОЗТАШУВАННЯ:</h2>
+                <a href="https://github.com/innsvi/lab6_web_kpi-"><p class="text-lab">РЕПОЗИТОРІЙ НА GITHUB</p></a>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 1</h2>
+                <p class="text-lab">Напишіть наступні функції:
+                    createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. 
+                    Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому створений об'єкт.
+                    
+                    logProduct(product) - колббек що приймає об'єкт продукту і логуючий його в консоль
+                    logTotalPrice(product) - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в 
+                </p>
+                <xmp class="codetext">
+                    // Функція createProduct приймає об'єкт товару без id та колбек.
+                    // Додає унікальний ідентифікатор до товару та викликає колбек з новим об'єктом.
+                    function createProduct(obj, callback) {
+                        // Створюємо новий об'єкт товару, копіюючи властивості з obj та додаючи унікальний id
+                        const product = { ...obj, id: Date.now() };
+                        // Викликаємо колбек з новим об'єктом товару
+                        callback(product);
+                    }
+                    
+                    // Колбек logProduct приймає об'єкт товару та логує його в консоль
+                    function logProduct(product) {
+                        console.log("Продукт:", product);
+                    }
+                    
+                    // Колбек logTotalPrice приймає об'єкт товару та логуює загальну вартість товару в консоль
+                    function logTotalPrice(product) {
+                        // Припустимо, що товар має властивість 'price' (ціна) та 'quantity' (кількість)
+                        const totalPrice = product.price * product.quantity;
+                        console.log("Загальна вартість товару:", totalPrice);
+                    }
+                    
+                    // Приклад використання
+                    const newProduct = { name: "Товар", price: 100, quantity: 2 };
+                    createProduct(newProduct, logProduct);
+                    createProduct(newProduct, logTotalPrice);
+                </xmp>
+            </div>
+
+
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 3</h2>
+                <p class="text-lab">З об'єкту medicines потрібно отримати масив   в якому будуть лише назви препаратів.
+    
+                    З масиву  потрібно прибрати медикаменти , в яких строк зберігання  уже пройшов . У новому масиві відсортувати медикаменти  у хронологічному порядку.
+                      Результат вивести у консоль.
+                    Застосувати стрілочні функції
+                    
+                    const medicines = {
+                        Агалгін: new Date("2022-05-01"),
+                        Ношпа: new Date("2025-07-02"),
+                        Альфахолін: new Date("2024-12-21"),
+                        Аспірин: new Date("2022-08-15"),
+                        Аспаркам: new Date("2024-04-18"),
+                       };
+                </p>
+
+                <xmp class="codetext">
+                    const medicines = {
+                        Агалгін: new Date("2022-05-01"),
+                        Ношпа: new Date("2025-07-02"),
+                        Альфахолін: new Date("2024-12-21"),
+                        Аспірин: new Date("2022-08-15"),
+                        Аспаркам: new Date("2024-04-18")
+                    };
+                    
+                    // Отримуємо поточну дату
+                    const currentDate = new Date();
+                    
+                    // Отримуємо масив медикаментів, у яких строк зберігання ще не пройшов
+                    const validMedicines = Object.entries(medicines)
+                        .filter(([name, expiryDate]) => expiryDate > currentDate)
+                        .sort(([, dateA], [, dateB]) => dateA - dateB)
+                        .map(([name]) => name);
+                    
+                    // Виводимо результат у консоль
+                    console.log("Медикаменти, строк зберігання яких ще не пройшов, у хронологічному порядку:", 
+                    validMedicines);
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 5</h2>
+                <p class="text-lab">Напишіть функцію, яка приймає массив об'єктів і повертає новий массивЗробіть знижку 20 % на всі фрукти у масивіНадайте ід для кожного продуктуconst fruits = [
+                      { name: "apple", price: 200 },
+                      { name: "orange", price: 300 },
+                      { name: "grapes", price: 750 },
+                    ];
+                </p>
+
+                <xmp class="codetext">
+                    const fruits = [
+    { name: "apple", price: 200 },
+    { name: "orange", price: 300 },
+    { name: "grapes", price: 750 }
+];
+
+// Функція, яка приймає масив об'єктів, робить знижку 20% та додає id
+const processFruits = (fruitsArray) => {
+    return fruitsArray.map((fruit, index) => ({
+        ...fruit,
+        id: index + 1,
+        price: fruit.price * 0.8
+    }));
+};
+
+// Викликаємо функцію та виводимо результат у консоль
+const discountedFruits = processFruits(fruits);
+console.log("Фрукти зі знижкою 20% та доданими id:", discountedFruits);
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 7</h2>
+                <p class="text-lab">Напиши клас Client який створює об'єкт
+                     з ​​властивостями login email
+                     Оголоси приватні властивості #login #email,
+                    доступ до яких зроби через геттер та сеттер login email
+                    
+                </p>
+
+                <xmp class="codetext">
+                    class Client {
+                        // Оголошення приватних властивостей #login та #email
+                        #login;
+                        #email;
+                    
+                        // Конструктор для створення об'єкта з властивостями login та email
+                        constructor(login, email) {
+                            this.#login = login;
+                            this.#email = email;
+                        }
+                    
+                        // Геттер для властивості login
+                        get login() {
+                            return this.#login;
+                        }
+                    
+                        // Сеттер для властивості login
+                        set login(value) {
+                            this.#login = value;
+                        }
+                    
+                        // Геттер для властивості email
+                        get email() {
+                            return this.#email;
+                        }
+                    
+                        // Сеттер для властивості email
+                        set email(value) {
+                            this.#email = value;
+                        }
+                    }
+                    
+                    // Приклад використання
+                    const client = new Client('user123', 'user123@example.com');
+                    console.log(client.login);  // Виведе: user123
+                    console.log(client.email);  // Виведе: user123@example.com
+                    
+                    client.login = 'newUser456';
+                    client.email = 'newUser456@example.com';
+                    console.log(client.login);  // Виведе: newUser456
+                    console.log(client.email);  // Виведе: newUser456@example.com
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">Завдання 9</h2>
+                <p class="text-lab">Поверніть об'єкт, в якому вказано кількість тегів.
+                    Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+                    
+                     const tweets = [
+                        { id: "000", likes: 5, tags: ["js", "nodejs"] },
+                        { id: "001", likes: 2, tags: ["html", "css"] },
+                        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+                        { id: "003", likes: 8, tags: ["css", "react"] },
+                        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+                        ];
+                    
+                </p>
+
+                <xmp class="codetext">
+                    const tweets = [
+    { id: "000", likes: 5, tags: ["js", "nodejs"] },
+    { id: "001", likes: 2, tags: ["html", "css"] },
+    { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+    { id: "003", likes: 8, tags: ["css", "react"] },
+    { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+const tagCount = tweets
+    .flatMap(tweet => tweet.tags) // розгортаємо масив тегів
+    .reduce((acc, tag) => {
+        acc[tag] = (acc[tag] || 0) + 1;
+        return acc;
+    }, {});
+
+console.log(tagCount);
+                </xmp>
+            </div>
+
+            <div class="text-container">
+                <h2 class="title-lab">ВИСНОВКИ:</h2>
+                <p class="text-lab">JavaScript є незамінною частиною сучасної 
+                    веб-розробки, оскільки він надає можливість створювати інтерактивні
+                     та динамічні веб-сайти. Як основний мова програмування для клієнтської 
+                     сторони, JavaScript дозволяє розробникам маніпулювати елементами DOM,
+                      реагувати на події користувача, а також асинхронно обмінюватися даними 
+                      з сервером, що призводить до покращення користувацького досвіду та 
+                      реакції інтерфейсу. Завдяки своїй гнучкості та широкому застосуванню,
+                       від простих скриптів до складних односторінкових додатків, JavaScript 
+                       відіграє ключову роль у створенні інтерактивних та відгукових 
+                       веб-сайтів, що є критично важливим для сучасного веб-дизайну та 
+                       розробки.
+                </p>
+            </div>
+    
+    </section>
+
+
+</main>
+
+
+<footer class="footer"> 
+    <div class="container">
+
+        <div class="adrfoot">
+        <div class="foot">
+        
+        <div class="logo-end">
+    <a class="logo logo-foot" href="./index.html"> 
+        Інна<span class="logo-footer">Свічкар</span>
+    </a>
+        </div>
+
+ 
+    <address>
+        <ul class="contacts-end">
+    <!-- <li class="address-footer"><a class="address-end link" href="https://www.google.com/maps/place/%D0%B1%D1%83%D0%BB.+%D0%9B%D0%B5%D1%81%D0%B8+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%BA%D0%B8,+26,+%D0%9A%D0%B8%D0%B5%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+02000/@50.4265841,30.5361971,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cf0e033ecbe9:0x57a4dffefec77da0!8m2!3d50.4265807!4d30.5383859" target="_blank"  rel="noopener noreferrer" >м. Київ, пр-т Лесі Українки, 26</a></li> -->
+    <li class="address-footer"><a class="post-end link" href=mailto: inna.svichkar@gmail.com>inna.svichkar@gmail.com</a></li>
+    <li class="address-footer"><a class="phone-end link" href=tel:+380507889367>+38 050 788 93 67</a></li>
+  </ul>
+    </address>
+</div>
+   
+        </div>
+</div>
+    
+</footer>
+
+       
+
+</body>
+</html>
